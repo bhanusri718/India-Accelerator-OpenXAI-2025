@@ -9,7 +9,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "HF API key not found" }, { status: 500 });
     }
     const body = await req.json();
-    const response = await fetch("https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base", {
+    const response = await fetch("https://api-inference.huggingface.co/models/facebook/blip-image-captioning-base", {
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(body),
